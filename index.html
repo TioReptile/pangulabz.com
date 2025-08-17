@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Em Breve!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+            font-weight: 300;
+            line-height: 1.6;
+            margin-bottom: 1.5em;
+        }
+
+        #countdown {
+            font-size: 2em;
+            font-weight: 700;
+            color: #3498db;
+            margin-bottom: 1.5em;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2em;
+        }
+
+        input[type="email"] {
+            width: 60%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+            font-size: 1em;
+            outline: none;
+        }
+
+        button {
+            padding: 15px 25px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .social-links a {
+            font-size: 1.5em;
+            margin: 0 15px;
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #3498db;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Algo Incrível Está Chegando!</h1>
+        <p>Estamos trabalhando duro para trazer uma nova experiência para você. Deixe seu e-mail abaixo para ser o primeiro a saber quando inaugurarmos.</p>
+        
+        <div id="countdown">Calculando...</div>
+        
+        <div class="form-container">
+            <input type="email" placeholder="Seu melhor e-mail" id="email">
+            <button onclick="alert('Obrigado por se inscrever!')">Notifique-me</button>
+        </div>
+        
+        <div class="social-links">
+            <a href="#" title="Instagram">📷</a>
+            <a href="#" title="Twitter / X">🐦</a>
+            <a href="#" title="Facebook">👍</a>
+        </div>
+    </div>
+
+    <script>
+        // --- CONFIGURAÇÃO DO CONTADOR REGRESSIVO ---
+        // Altere a data e hora abaixo para a data do seu lançamento
+        const launchDate = new Date("Oct 30, 2025 18:00:00").getTime();
+
+        const countdownFunction = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "LANÇAMOS!";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
