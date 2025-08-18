@@ -1,0 +1,267 @@
+/* --- Variáveis Globais --- */
+:root {
+    --primary-red: #c0392b; /* Vermelho forte, cor da sorte */
+    --accent-yellow: #f1c40f; /* Amarelo dourado, imperial */
+    --accent-green: #27ae60; /* Verde jade, natureza e harmonia */
+    --dark-text: #34495e; /* Cinza escuro, para leitura */
+    --light-bg: #fdfaf4; /* Um branco-quente, cor de papel de arroz */
+    --cloud-color-1: rgba(255, 255, 255, 0.7);
+    --cloud-color-2: rgba(236, 240, 241, 0.6);
+}
+
+/* --- Reset Básico e Estilos Gerais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-red);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* --- Cabeçalho e Navegação --- */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--dark-text);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 15px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 600;
+    padding-bottom: 5px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-red);
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-red);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* --- Seção Hero (com Nuvens) --- */
+.hero {
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+    position: relative;
+    background: linear-gradient(45deg, var(--primary-red), #8e2418);
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 15% 85%, var(--cloud-color-1) 5%, transparent 40%),
+        radial-gradient(circle at 80% 20%, var(--cloud-color-2) 10%, transparent 50%),
+        radial-gradient(circle at 50% 70%, var(--cloud-color-2) 8%, transparent 40%),
+        radial-gradient(circle at 90% 90%, var(--cloud-color-1) 5%, transparent 30%),
+        radial-gradient(circle at 10% 15%, var(--cloud-color-2) 12%, transparent 50%);
+    background-size: 400px 400px;
+    animation: moveClouds 25s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes moveClouds {
+    0% { background-position: 0 0; }
+    100% { background-position: 400px 400px; }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    font-weight: 300;
+}
+
+.cta-button {
+    background-color: var(--accent-yellow);
+    color: var(--dark-text);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    border: 2px solid transparent;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* --- Seção de Serviços --- */
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    width: 300px;
+    text-align: left;
+    border-top: 5px solid var(--accent-green);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    color: var(--accent-green);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* --- Seção Sobre e Contato --- */
+#about p, #contact p {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    font-size: 1.1rem;
+}
+
+#contact .cta-button {
+    background-color: var(--accent-green);
+    color: #fff;
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: var(--dark-text);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+}

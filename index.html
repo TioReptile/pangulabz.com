@@ -1,142 +1,77 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Em Breve!</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 600px;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            font-size: 2.8em;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 0.5em;
-        }
-
-        p {
-            font-size: 1.2em;
-            font-weight: 300;
-            line-height: 1.6;
-            margin-bottom: 1.5em;
-        }
-
-        #countdown {
-            font-size: 2em;
-            font-weight: 700;
-            color: #3498db;
-            margin-bottom: 1.5em;
-        }
-
-        .form-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 2em;
-        }
-
-        input[type="email"] {
-            width: 60%;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px 0 0 5px;
-            font-size: 1em;
-            outline: none;
-        }
-
-        button {
-            padding: 15px 25px;
-            border: none;
-            background-color: #3498db;
-            color: white;
-            font-size: 1em;
-            font-weight: bold;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #2980b9;
-        }
-
-        .social-links a {
-            font-size: 1.5em;
-            margin: 0 15px;
-            color: #555;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #3498db;
-        }
-
-    </style>
+    <title>Pan Gu Labz - Inovação e Tecnologia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="container">
-        <h1>Algo Incrível Está Chegando!</h1>
-        <p>Estamos trabalhando duro para trazer uma nova experiência para você. Deixe seu e-mail abaixo para ser o primeiro a saber quando inaugurarmos.</p>
-        
-        <div id="countdown">Calculando...</div>
-        
-        <div class="form-container">
-            <input type="email" placeholder="Seu melhor e-mail" id="email">
-            <button onclick="alert('Obrigado por se inscrever!')">Notifique-me</button>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="Logo Pan Gu Labz" class="logo">
+                <span>Pan Gu Labz</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Início</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#about">Sobre Nós</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
         </div>
-        
-        <div class="social-links">
-            <a href="#" title="Instagram">📷</a>
-            <a href="#" title="Twitter / X">🐦</a>
-            <a href="#" title="Facebook">👍</a>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1>Criando o Futuro com a Sabedoria Ancestral</h1>
+                <p>Soluções tecnológicas inovadoras que unem performance e design com um toque de tradição.</p>
+                <a href="#services" class="cta-button">Explore Nossos Serviços</a>
+            </div>
+        </section>
+
+        <section id="services" class="container section">
+            <h2>Nossos Serviços</h2>
+            <div class="service-cards">
+                <div class="card">
+                    <h3>Desenvolvimento Web</h3>
+                    <p>Criamos sites e aplicações web modernas, responsivas e otimizadas para a sua necessidade.</p>
+                </div>
+                <div class="card">
+                    <h3>Soluções em Nuvem</h3>
+                    <p>Infraestrutura escalável e segura para seus projetos, utilizando as melhores práticas do mercado.</p>
+                </div>
+                <div class="card">
+                    <h3>Consultoria de TI</h3>
+                    <p>Nossa expertise à disposição do seu negócio para otimizar processos e impulsionar o crescimento.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="container section">
+            <h2>Sobre a Pan Gu Labz</h2>
+            <p>A Pan Gu Labz nasceu da fusão entre a paixão por tecnologia de ponta e o profundo respeito pelas tradições milenares. Assim como Pan Gu, o criador do universo na mitologia chinesa, nós nos dedicamos a criar ordem e inovação a partir do caos inicial de uma ideia. Nossa missão é construir soluções robustas e elegantes que equilibram o moderno e o tradicional.</p>
+        </section>
+
+        <section id="contact" class="container section">
+            <h2>Entre em Contato</h2>
+            <p>Pronto para começar seu próximo projeto? Envie-nos uma mensagem.</p>
+            <a href="mailto:contato@pangulabz.com" class="cta-button">contato@pangulabz.com</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pan Gu Labz. Todos os direitos reservados.</p>
         </div>
-    </div>
-
-    <script>
-        // --- CONFIGURAÇÃO DO CONTADOR REGRESSIVO ---
-        // Altere a data e hora abaixo para a data do seu lançamento
-        const launchDate = new Date("Oct 30, 2025 18:00:00").getTime();
-
-        const countdownFunction = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = launchDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-            if (distance < 0) {
-                clearInterval(countdownFunction);
-                document.getElementById("countdown").innerHTML = "LANÇAMOS!";
-            }
-        }, 1000);
-    </script>
+    </footer>
 
 </body>
 </html>
