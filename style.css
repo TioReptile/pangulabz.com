@@ -1,12 +1,12 @@
-/* --- Variáveis Globais --- */
+/* --- Variáveis Globais (Tema Gamer/Fantasia) --- */
 :root {
-    --primary-red: #c0392b; /* Vermelho forte, cor da sorte */
-    --accent-yellow: #f1c40f; /* Amarelo dourado, imperial */
-    --accent-green: #27ae60; /* Verde jade, natureza e harmonia */
-    --dark-text: #34495e; /* Cinza escuro, para leitura */
-    --light-bg: #fdfaf4; /* Um branco-quente, cor de papel de arroz */
-    --cloud-color-1: rgba(255, 255, 255, 0.7);
-    --cloud-color-2: rgba(236, 240, 241, 0.6);
+    --primary-gold: #D4AF37; /* Ouro, para destaque e títulos */
+    --deep-red: #A12525;      /* Vermelho escuro, para detalhes */
+    --emerald-green: #28a745; /* Verde, para ícones ou sucesso */
+    --dark-bg: #121212;       /* Fundo escuro, quase preto */
+    --content-bg: #1e1e1e;   /* Fundo para seções, um pouco mais claro */
+    --light-text: #ecf0f1;   /* Texto claro, branco acinzentado */
+    --dim-text: #bdc3c7;     /* Texto secundário, mais escuro */
 }
 
 /* --- Reset Básico e Estilos Gerais --- */
@@ -21,10 +21,11 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--light-bg);
-    color: var(--dark-text);
-    line-height: 1.6;
+    font-family: 'Lato', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    line-height: 1.7;
+    background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
 }
 
 .container {
@@ -36,19 +37,27 @@ body {
 .section {
     padding: 60px 0;
     text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+.section:last-of-type {
+    border-bottom: none;
 }
 
 .section h2 {
-    font-size: 2.5rem;
-    color: var(--primary-red);
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    color: var(--primary-gold);
     margin-bottom: 20px;
-    font-weight: 600;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
 /* --- Cabeçalho e Navegação --- */
 header {
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: rgba(18, 18, 18, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #333;
     padding: 15px 0;
     position: sticky;
     top: 0;
@@ -66,7 +75,8 @@ header .container {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: var(--dark-text);
+    color: var(--light-text);
+    font-family: 'Cinzel', serif;
     font-size: 1.5rem;
     font-weight: 700;
 }
@@ -74,6 +84,7 @@ header .container {
 .logo {
     height: 50px;
     margin-right: 15px;
+    filter: drop-shadow(0 0 5px var(--primary-gold));
 }
 
 nav ul {
@@ -84,103 +95,70 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: var(--dark-text);
-    font-weight: 600;
-    padding-bottom: 5px;
-    position: relative;
-    transition: color 0.3s ease;
+    color: var(--dim-text);
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--primary-red);
-    transition: width 0.3s ease;
+nav a:hover, nav a.active {
+    color: var(--primary-gold);
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
 }
 
-nav a:hover {
-    color: var(--primary-red);
-}
-
-nav a:hover::after {
-    width: 100%;
-}
-
-/* --- Seção Hero (com Nuvens) --- */
+/* --- Seção Hero --- */
 .hero {
-    color: white;
-    text-align: center;
-    padding: 120px 20px;
-    position: relative;
-    background: linear-gradient(45deg, var(--primary-red), #8e2418);
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(circle at 15% 85%, var(--cloud-color-1) 5%, transparent 40%),
-        radial-gradient(circle at 80% 20%, var(--cloud-color-2) 10%, transparent 50%),
-        radial-gradient(circle at 50% 70%, var(--cloud-color-2) 8%, transparent 40%),
-        radial-gradient(circle at 90% 90%, var(--cloud-color-1) 5%, transparent 30%),
-        radial-gradient(circle at 10% 15%, var(--cloud-color-2) 12%, transparent 50%);
-    background-size: 400px 400px;
-    animation: moveClouds 25s linear infinite;
-    opacity: 0.5;
-}
-
-@keyframes moveClouds {
-    0% { background-position: 0 0; }
-    100% { background-position: 400px 400px; }
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    background: var(--dark-bg) radial-gradient(ellipse at center, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
+    border-bottom: 1px solid #333;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
+    text-align: center;
 }
 
 .hero h1 {
+    font-family: 'Cinzel', serif;
     font-size: 3.5rem;
-    font-weight: 700;
+    color: var(--primary-gold);
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
     margin-bottom: 15px;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
 .hero p {
     font-size: 1.2rem;
+    color: var(--dim-text);
     max-width: 600px;
     margin: 0 auto 30px;
-    font-weight: 300;
 }
 
 .cta-button {
-    background-color: var(--accent-yellow);
-    color: var(--dark-text);
-    padding: 15px 30px;
-    border-radius: 50px;
+    background: linear-gradient(45deg, var(--primary-gold), #b8860b);
+    color: #111;
+    padding: 15px 35px;
+    border-radius: 5px;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
     display: inline-block;
-    border: 2px solid transparent;
+    border: 1px solid #a37d1c;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    text-transform: uppercase;
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
 }
 
-/* --- Seção de Serviços --- */
+/* --- Seção de Soluções (Cards) --- */
 .service-cards {
     display: flex;
     justify-content: center;
@@ -190,69 +168,57 @@ nav a:hover::after {
 }
 
 .card {
-    background: #fff;
+    background: var(--content-bg);
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    width: 300px;
-    text-align: left;
-    border-top: 5px solid var(--accent-green);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    border: 1px solid #333;
+    width: 320px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
 }
 
 .card h3 {
-    color: var(--accent-green);
+    font-family: 'Cinzel', serif;
+    color: var(--primary-gold);
     margin-bottom: 15px;
     font-size: 1.5rem;
 }
 
-/* --- Seção Sobre e Contato --- */
-#about p, #contact p {
-    max-width: 700px;
-    margin: 0 auto 20px;
-    font-size: 1.1rem;
-}
-
-#contact .cta-button {
-    background-color: var(--accent-green);
-    color: #fff;
+.card p {
+    color: var(--dim-text);
+    font-size: 0.95rem;
 }
 
 /* --- Rodapé --- */
 footer {
-    background-color: var(--dark-text);
-    color: #fff;
+    background-color: #000;
+    color: var(--dim-text);
     text-align: center;
     padding: 20px 0;
     margin-top: 40px;
+    font-size: 0.9rem;
 }
 
 /* --- Responsividade --- */
 @media (max-width: 768px) {
     header .container {
         flex-direction: column;
-        gap: 15px;
-    }
-
-    nav ul {
-        gap: 15px;
+        gap: 20px;
     }
 
     .hero h1 {
         font-size: 2.5rem;
     }
 
-    .hero p {
-        font-size: 1rem;
-    }
-
     .section h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .service-cards {
