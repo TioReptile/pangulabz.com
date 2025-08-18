@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pan Gu Labz - Soluções para Perfect World</title>
+    <title data-key="pageTitle">Pan Gu Labz - Soluções para Perfect World</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
 
@@ -19,62 +20,68 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="#hero">Início</a></li>
-                    <li><a href="#services">Soluções</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="#hero" data-key="navHome">Início</a></li>
+                    <li><a href="#services" data-key="navSolutions">Soluções</a></li>
+                    <li><a href="#about" data-key="navAbout">Sobre</a></li>
+                    <li><a href="#contact" data-key="navContact">Contato</a></li>
                 </ul>
             </nav>
+            <div class="language-switcher">
+                <a href="#" data-lang="pt">PT</a>
+                <a href="#" data-lang="en">EN</a>
+                <a href="#" data-lang="ru">RU</a>
+            </div>
         </div>
     </header>
 
     <main>
         <section id="hero" class="hero">
             <div class="hero-content">
-                <h1>Eleve Seu Servidor de Perfect World a um Novo Patamar</h1>
-                <p>Desenvolvemos soluções exclusivas que transformarão a experiência no seu mundo.</p>
-                <a href="#services" class="cta-button">Conheça as Soluções</a>
+                <h1 data-key="heroTitle">Eleve Seu Servidor de Perfect World a um Novo Patamar</h1>
+                <p data-key="heroSubtitle">Desenvolvemos soluções exclusivas que transformarão a experiência no seu mundo.</p>
+                <a href="#services" class="cta-button" data-key="heroButton">Conheça as Soluções</a>
             </div>
         </section>
 
         <section id="services" class="container section">
-            <h2>Nossas Soluções</h2>
+            <h2 data-key="solutionsTitle">Nossas Soluções</h2>
             <div class="service-cards">
                 <div class="card">
                     <div class="card-icon map-icon"></div>
-                    <h3>Mapas Customizados</h3>
-                    <p>Cidades, dungeons e arenas únicas, criadas do zero para surpreender seus jogadores e oferecer novos desafios.</p>
+                    <h3 data-key="card1Title">Mapas Customizados</h3>
+                    <p data-key="card1Desc">Cidades, dungeons e arenas únicas, criadas do zero para surpreender seus jogadores e oferecer novos desafios.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon system-icon"></div>
-                    <h3>Sistemas Exclusivos</h3>
-                    <p>Sistemas de forja, títulos, eventos automáticos e mecânicas de jogo inovadoras para engajar sua comunidade.</p>
+                    <h3 data-key="card2Title">Sistemas Exclusivos</h3>
+                    <p data-key="card2Desc">Sistemas de forja, títulos, eventos automáticos e mecânicas de jogo inovadoras para engajar sua comunidade.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon panel-icon"></div>
-                    <h3>Painéis de Controle</h3>
-                    <p>Painéis web intuitivos para administração de jogadores, contas e do servidor, com total segurança e controle.</p>
+                    <h3 data-key="card3Title">Painéis de Controle</h3>
+                    <p data-key="card3Desc">Painéis web intuitivos para administração de jogadores, contas e do servidor, com total segurança e controle.</p>
                 </div>
             </div>
         </section>
 
         <section id="about" class="container section">
-            <h2>Forjado no Caos, Entregue a Você</h2>
-            <p>A Pan Gu Labz foi fundada por veteranos de Perfect World apaixonados por desenvolvimento. Assim como o mito de Pan Gu, que moldou o mundo, nós moldamos a experiência do seu servidor com precisão e criatividade. Entendemos as necessidades de donos de servidores e jogadores, e nosso compromisso é entregar qualidade e inovação.</p>
+            <h2 data-key="aboutTitle">Forjado no Caos, Entregue a Você</h2>
+            <p data-key="aboutDesc">A Pan Gu Labz foi fundada por veteranos de Perfect World apaixonados por desenvolvimento. Assim como o mito de Pan Gu, que moldou o mundo, nós moldamos a experiência do seu servidor com precisão e criatividade. Entendemos as necessidades de donos de servidores e jogadores, e nosso compromisso é entregar qualidade e inovação.</p>
         </section>
 
         <section id="contact" class="container section">
-            <h2>Transforme sua Ideia em Realidade</h2>
-            <p>Tem um projeto em mente? Fale conosco e vamos construir algo lendário juntos.</p>
-            <a href="mailto:contato@pangulabz.com" class="cta-button">Orçamento via E-mail</a>
+            <h2 data-key="contactTitle">Transforme sua Ideia em Realidade</h2>
+            <p data-key="contactDesc">Tem um projeto em mente? Fale conosco e vamos construir algo lendário juntos.</p>
+            <a href="mailto:contato@pangulabz.com" class="cta-button" data-key="contactButton">Orçamento via E-mail</a>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>Pan Gu Labz &copy; 2025 - Soluções para Perfect World. Todos os direitos reservados.</p>
+            <p data-key="footerText">Pan Gu Labz &copy; 2025 - Soluções para Perfect World. Todos os direitos reservados.</p>
         </div>
     </footer>
 
+    <script src="translate.js"></script>
 </body>
 </html>

@@ -222,6 +222,32 @@ footer {
     font-size: 0.9rem;
 }
 
+/* --- Seletor de Idioma --- */
+.language-switcher {
+    display: flex;
+    gap: 10px;
+}
+
+.language-switcher a {
+    color: var(--dim-text);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 5px 8px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.language-switcher a:hover {
+    color: var(--primary-gold);
+    background-color: var(--content-bg);
+}
+
+.language-switcher a.active {
+    color: var(--primary-gold);
+    background-color: var(--content-bg);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
 /* --- Responsividade --- */
 @media (max-width: 768px) {
     header .container {
